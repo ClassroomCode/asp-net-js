@@ -14,11 +14,26 @@ namespace CS.WebAPI.Controllers
         }
 
         [HttpGet("products")]
-        public async Task<IEnumerable<Product>> AllProducts() 
+        public async Task<IActionResult> AllProducts() 
         {
             var products = await _repository.GetAllProducts();
 
-            return products;
+            var r = products.Select(p => new {
+                name = p.ProductName,
+                price = p.UnitPrice
+            });
+
+            return Ok(r);
+        }
+
+        [HttpGet("product/{id}")]
+        public async Task<IActionResult> Product(int id)
+        {
+            var product = await _repository.GetProduct(id);
+
+            if (product is null) return NotFound();
+
+            return Ok(product);
         }
     }
 }
