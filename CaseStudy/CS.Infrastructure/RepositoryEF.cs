@@ -5,7 +5,7 @@ namespace CS.Infrastructure;
 
 public static class RepositoryFactory
 {
-    public static IRepository CreateRepository(string connStr) =>
+    public static IRepository Create(string connStr) =>
         new RepositoryEF(connStr);
 }
 

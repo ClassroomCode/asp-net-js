@@ -1,6 +1,6 @@
 ﻿namespace CS.Core;
 
-public class Supplier
+public class Supplier 
 {
     public int Id { get; set; }
     public string CompanyName { get; set; } = String.Empty;
