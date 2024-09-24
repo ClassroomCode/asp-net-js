@@ -1,4 +1,6 @@
-﻿namespace CS.Core;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace CS.Core;
 
 public class Product
 {
