@@ -1,0 +1,12 @@
+﻿@model IEnumerable<CS.Core.Product>
+
+<html>
+    <head></head>
+    <body>
+        <ul>
+        @foreach (var p in Model) {
+            <li>@p.ProductName</li>
+        }
+        </ul>
+    </body>
+</html>
