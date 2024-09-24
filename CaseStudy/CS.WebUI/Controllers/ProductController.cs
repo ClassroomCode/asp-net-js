@@ -12,7 +12,7 @@ public class ProductController : Controller
         _repository = repository;
     }
 
-    [HttpGet("productsmvc")]
+    [HttpGet("")]
     public async Task<IActionResult> Index()
     {
         var products = await _repository.GetAllProducts();

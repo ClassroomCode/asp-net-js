@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 var connStr = builder.Configuration.GetConnectionString("ConnStr");
 if (connStr is null) {
-    //
+    // TODO: something
 }
 else {
     builder.Services.AddScoped<IRepository>(_ =>
