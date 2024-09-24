@@ -1,4 +1,5 @@
 ﻿using CS.Core;
+using CS.WebUI.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CS.WebUI.Controllers;
@@ -16,7 +17,10 @@ public class ProductController : Controller
     public async Task<IActionResult> Index()
     {
         var products = await _repository.GetAllProducts();
+        var suppliers = await _repository.GetAllSuppliers();
 
-        return View(products);
+        var vm = new HomeViewModel(products, suppliers);
+
+        return View(vm);
     }
 }

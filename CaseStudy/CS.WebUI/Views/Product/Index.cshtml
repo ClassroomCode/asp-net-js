@@ -1,7 +1,13 @@
-﻿@model IEnumerable<Product>
+﻿@model HomeViewModel
+
+<h1>Products</h1>
+
+<partial name="_ProductList" for="Products">
+
+<h1>Suppliers</h1>
 
 <ul>
-@foreach (var p in Model) {
-    <li>@p.ProductName</li>
-}
+    @foreach (var p in Model.Suppliers) {
+        <li>@p.CompanyName</li>
+    }
 </ul>

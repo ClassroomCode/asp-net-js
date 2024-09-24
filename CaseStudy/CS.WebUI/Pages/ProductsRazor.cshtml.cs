@@ -14,10 +14,13 @@ namespace CS.WebUI.Pages
         }
 
         public IEnumerable<Product> Products { get; set; } = Array.Empty<Product>();
+        public IEnumerable<Supplier> Suppliers { get; set; } = Array.Empty<Supplier>();
+
 
         public async Task OnGet()
         {
             Products = await _repository.GetAllProducts();
+            Suppliers = await _repository.GetAllSuppliers();
         }
     }
 }

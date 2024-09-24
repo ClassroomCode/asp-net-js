@@ -1,8 +1,18 @@
 ﻿@page 
 @model CS.WebUI.Pages.ProductsRazorModel
 
+<h1>Products</h1>
+
 <ul>
     @foreach (var p in Model.Products) {
         <li>@p.ProductName</li>
+    }
+</ul>
+
+<h1>Suppliers</h1>
+
+<ul>
+    @foreach (var p in Model.Suppliers) {
+        <li>@p.CompanyName</li>
     }
 </ul>
