@@ -51,8 +51,8 @@
 <form id="addToCartForm" asp-controller="Product"
       asp-action="AddToCart" asp-route-id="@Model.Id">
 
-    <input name="quantity" size="3" />
-    <input type="submit" value="Add to Cart" />
+    <input id="quantity" name="quantity" size="3" />
+    <button id="addToCartButton" type="button">Add to Cart</button>
 </form>
 
 <div id="message"></div>
