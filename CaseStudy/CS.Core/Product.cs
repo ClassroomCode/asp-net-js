@@ -10,4 +10,6 @@ public class Product
 
     public int SupplierId { get; set; }
     public Supplier? Supplier { get; set; }
+
+    public bool IsExpensive => (UnitPrice > (decimal)20.0);
 }

@@ -37,8 +37,8 @@ internal class RepositoryEF : DbContext, IRepository
     public async Task<IEnumerable<Product>> GetAllProducts(bool includeSuppliers = false)
     {
         return includeSuppliers switch {
-            true => await Products.Include(p => p.Supplier).ToListAsync(),
-            false => await Products.ToListAsync()
+            true => await Products.AsNoTracking().Include(p => p.Supplier).ToListAsync(),
+            false => await Products.AsNoTracking().ToListAsync()
         };
     }
 

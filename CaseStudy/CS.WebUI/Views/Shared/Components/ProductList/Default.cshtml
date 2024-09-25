@@ -31,7 +31,12 @@
                 @Html.DisplayFor(modelItem => item.ProductName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UnitPrice)
+                @if (item.IsExpensive)
+                {
+                    <span class="alert-danger">@($"{item.UnitPrice:C}")</span>
+                } else {
+                    <span>@($"{item.UnitPrice:C}")</span>
+                }
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Package)
