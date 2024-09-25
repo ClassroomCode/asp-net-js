@@ -12,6 +12,9 @@ else {
         RepositoryFactory.Create(connStr));
 }
 
+builder.Services.AddMemoryCache();
+builder.Services.AddSession();
+
 builder.Services.AddRazorPages();
 builder.Services.AddControllersWithViews();
 
@@ -20,6 +23,8 @@ var app = builder.Build();
 app.UseStatusCodePages();
 
 app.UseStaticFiles();
+
+app.UseSession();
 
 app.UseRouting();
 
