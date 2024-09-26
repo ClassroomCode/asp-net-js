@@ -22,10 +22,12 @@ namespace CS.WebAPI.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Policy = "AdminsOnly")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> GetProduct(int id)
+        public async Task<IActionResult> GetProduct(int id,
+            [FromHeader(Name = "X-PSK")] string? psk = null)
         {
             var product = await _repository.GetProduct(id);
             if (product is null) return NotFound();

@@ -1,7 +1,19 @@
 using CS.Core;
 using CS.Infrastructure;
+using CS.WebAPI.Auth;
+using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAuthentication("MyCustomAuth")
+    .AddScheme<AuthenticationSchemeOptions, MyCustomAuthHandler>
+        ("MyCustomAuth", options => { });
+
+builder.Services.AddAuthorization(options => {
+    options.AddPolicy("AdminsOnly", policy =>
+    policy.RequireClaim(ClaimTypes.Role, "Admin"));
+});
 
 var connStr = builder.Configuration.GetConnectionString("ConnStr");
 if (connStr is null) {
@@ -34,7 +46,8 @@ if (app.Environment.IsDevelopment()) {
 
 app.UseCors("AllowedOrigins");
 
-//app.UseAuthorization();
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 
