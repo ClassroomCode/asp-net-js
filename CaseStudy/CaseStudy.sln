@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.Core", "CS.Core\CS.Core.csproj", "{685BE9E3-B60A-4A66-BDFA-9D449838E91D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS.Core", "CS.Core\CS.Core.csproj", "{685BE9E3-B60A-4A66-BDFA-9D449838E91D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.Infrastructure", "CS.Infrastructure\CS.Infrastructure.csproj", "{6FD710FC-64FD-4D41-89E5-C5E1A9358C11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS.Infrastructure", "CS.Infrastructure\CS.Infrastructure.csproj", "{6FD710FC-64FD-4D41-89E5-C5E1A9358C11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.WebUI", "CS.WebUI\CS.WebUI.csproj", "{A8D37A24-51EF-4237-9EAB-125EF1896FA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS.WebUI", "CS.WebUI\CS.WebUI.csproj", "{A8D37A24-51EF-4237-9EAB-125EF1896FA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.WebAPI", "CS.WebAPI\CS.WebAPI.csproj", "{37F7DE24-ABDE-4BEB-9AC1-F5ADC96881E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS.WebAPI", "CS.WebAPI\CS.WebAPI.csproj", "{37F7DE24-ABDE-4BEB-9AC1-F5ADC96881E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.BlazorDemo", "CS.BlazorDemo\CS.BlazorDemo.csproj", "{44F5E20E-4E47-490B-BF28-1931DFECD117}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{37F7DE24-ABDE-4BEB-9AC1-F5ADC96881E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37F7DE24-ABDE-4BEB-9AC1-F5ADC96881E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37F7DE24-ABDE-4BEB-9AC1-F5ADC96881E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44F5E20E-4E47-490B-BF28-1931DFECD117}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44F5E20E-4E47-490B-BF28-1931DFECD117}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44F5E20E-4E47-490B-BF28-1931DFECD117}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44F5E20E-4E47-490B-BF28-1931DFECD117}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
