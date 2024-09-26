@@ -1,9 +1,11 @@
 using CS.Core;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace CS.WebUI.Pages
 {
+    [Authorize(Policy = "AdminsOnly")]
     public class ProductsRazorModel : PageModel
     {
         private readonly IRepository _repository;

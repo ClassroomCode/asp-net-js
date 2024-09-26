@@ -26,6 +26,7 @@ public class ProductController : Controller
     }
 
     [HttpGet("product/edit/{id}")]
+    [Authorize(Policy="AdminsOnly")]
     public async Task<IActionResult> Edit(int id)
     {
         var product = await _repository.GetProduct(id, includeSupplier: true);
