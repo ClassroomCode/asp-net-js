@@ -1,0 +1,19 @@
+﻿@page "/products"
+@rendermode InteractiveServer
+
+<h3>ProductList</h3>
+
+<p>Here is some content</p>
+
+<p>Current count: @currentCount</p>
+
+<button @onclick="IncrementCount">Click me</button>
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
