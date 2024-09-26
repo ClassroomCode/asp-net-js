@@ -1,19 +1,42 @@
 ﻿@page "/products"
-@rendermode InteractiveServer
+@using CS.Core
+@inject HttpClient Http
+@attribute [StreamRendering]
 
-<h3>ProductList</h3>
+<h3>Products</h3>
 
-<p>Here is some content</p>
-
-<p>Current count: @currentCount</p>
-
-<button @onclick="IncrementCount">Click me</button>
+@if (products is null) {
+    <p><em>Loading....</em></p>
+}
+else if (products.Count() == 0) {
+    <p><em>Unable to get products</em></p>
+}
+else {
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in products) {
+                <tr>
+                    <td>@product.ProductName</td>
+                    <td>@product.UnitPrice</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
 
 @code {
-    private int currentCount = 3;
+    private Product[]? products;
 
-    private void IncrementCount()
+    protected override async Task OnInitializedAsync()
     {
-        currentCount++;
+        await Task.Delay(5000);
+
+        products = await Http.GetFromJsonAsync<Product[]>("product");
     }
 }
